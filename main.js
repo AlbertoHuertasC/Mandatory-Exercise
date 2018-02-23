@@ -100,7 +100,10 @@ function appendChartBars()
       .attr('y', function(d, i) {
         return y(d.product);
       })
-      .attr('height', y.bandwidth)
+      .attr('height', y.bandwidth) 
+      .attr('height', function(d, i) {
+        return y.bandwidth() -2;
+      })
       .attr('width', function(d, i) {
         return x(d.sales);
       });
