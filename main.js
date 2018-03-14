@@ -18,12 +18,13 @@ setupYScale();
 appendXAxis();
 appendYAxis();
 appendChartBars();
+appendLegend();
 
 // 1. let's start by selecting the SVG Node
 function setupCanvasSize() {
-  margin = {top: 0, left: 80, bottom: 20, right: 30};
-  width = 960 - margin.left - margin.right;
-  height = 120 - margin.top - margin.bottom;
+  margin = {top: 120, left: 200, bottom: 150, right: 140};
+  width = 860 - margin.left - margin.right;
+  height = 700 - margin.top - margin.bottom;
 }
 
 function appendSvg(domElement) {
@@ -41,27 +42,27 @@ function appendSvg(domElement) {
 // domain == data (data from 0 to maxSales) boundaries
 function setupXScale()
 {
-  var maxSales = d3.max(totalSales, function(d, i) {
-    return d.sales;
-  });
-
-  x = d3.scaleLinear()
-    .range([0, width])
-    .domain([0, maxSales]);
-
-}
-
-// Now we don't have a linear range of values, we have a discrete
-// range of values (one per product)
-// Here we are generating an array of product names
-function setupYScale()
-{
-  y = d3.scaleBand()
-    .rangeRound([0, height])
+  x = d3.scaleBand()
+    .rangeRound([0, width])
     .domain(totalSales.map(function(d, i) {
       return d.product;
     }));
 }
+
+
+
+function setupYScale()
+{
+  var maxSales = d3.max(totalSales, function(d, i) {
+    return d.sales;
+  });
+
+  y = d3.scaleLinear()
+    .range([height, 0])
+    .domain([0, maxSales]);
+
+}
+
 
 function appendXAxis() {
   // Add the X Axis
@@ -95,16 +96,48 @@ function appendChartBars()
     //    width: Now that we have the mapping previously done (linear)
     //           we just pass the sales and use the X axis conversion to
     //           get the right value
+
+
     newRects.append('rect')
-      .attr('x', x(0))
+      .attr('x', function(d, i) {
+        return x(d.product);
+      })
       .attr('y', function(d, i) {
-        return y(d.product);
-      })
-      .attr('height', y.bandwidth) 
+        return y(d.sales);
+      })     
       .attr('height', function(d, i) {
-        return y.bandwidth() -2;
+        return height - y(d.sales);
       })
+      .attr('width', x.bandwidth)  
       .attr('width', function(d, i) {
-        return x(d.sales);
-      });
+        return x.bandwidth() -10;
+      })
+      .attr('fill', function(d, i) {
+        return d.color;
+      })    
+      ;
+
+}
+function appendLegend()
+{
+    var legend = svg.selectAll('.legend')
+        .data(totalSales)
+        .enter()
+        .append('g')
+        .attr('class', 'legend')
+        .attr('transform', function(d, i) { 
+          return "translate(20," + i * 25 + ")"; 
+        });
+    legend.append('rect')
+        .attr('x', width - 19)
+        .attr('width', 19)
+        .attr('height', 19)
+        .style('fill', function(d, i) { return d.color;})
+        .style('stroke', function(d, i) { return d.color;});
+
+    legend.append('text')
+        .attr('x', width)
+        .attr('y', 9.5)
+        .attr("dy", "0.32em")
+        .text(function(d) { return d.product; });
 }
