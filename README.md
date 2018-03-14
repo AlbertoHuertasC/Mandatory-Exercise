@@ -18,8 +18,8 @@ The next barchart is the starting point to perform the exercise:
 
 ![picture]()
 
-/**
-function appendLegend()
+
+`function appendLegend()
 {
     var legend = svg.selectAll('.legend')
         .data(totalSales)
@@ -28,8 +28,8 @@ function appendLegend()
         .attr('class', 'legend')
         .attr('transform', function(d, i) { 
           return "translate(20," + i * 25 + ")"; 
-        });
-*/
+        });`
+
 
 
 
