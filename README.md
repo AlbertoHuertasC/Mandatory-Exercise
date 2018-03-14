@@ -8,7 +8,10 @@ The aim of this task is to create a new barchar from an initial barchar. The fin
 - Adding a legend
 - Showing the chart vertically
 
-C:\Users\usuario\Documents\Mandatory-Exercise\pictures\Final barchar.PNG
+
+!{picture}(C:\Users\usuario\Documents\Mandatory-Exercise\pictures\Final barchar.PNG)
+
+
 
 
 
