@@ -16,6 +16,7 @@ The next barchart is the starting point to perform the exercise:
 
 We have to switch X and Y axes and we can see the result in the next code:
 
+``` java
 function setupXScale()
 {
   x = d3.scaleBand()
@@ -26,9 +27,6 @@ function setupXScale()
 }
 
 
-
-
-``` java
 function setupYScale()
 {
   var maxSales = d3.max(totalSales, function(d, i) {
@@ -40,7 +38,7 @@ function setupYScale()
     .domain([0, maxSales]);
 
 }
-```
+
 
 function appendXAxis() {
   svg.append("g")
@@ -52,7 +50,7 @@ function appendYAxis() {
   svg.append("g")
   .call(d3.axisLeft(y));
 }
-
+```
 
 
 ![picture](https://github.com/AlbertoHuertasC/Mandatory-Exercise/blob/master/pictures/Final.PNG?raw=true)
