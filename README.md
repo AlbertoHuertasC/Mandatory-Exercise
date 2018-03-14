@@ -52,10 +52,45 @@ function appendYAxis() {
 }
 ```
 
+2. Adding colors to each bar
+
+To do this, we have to add the color we want for each product in data.js, creating a new attribute in this way.
+``` java
+.attr('fill', function(d, i) {
+        return d.color;
+      })
+```
+
+![picture](https://github.com/AlbertoHuertasC/Mandatory-Exercise/blob/master/pictures/1.PNG?raw=true)
+
+
+3. Adding space between columns
+
+To add space between columns, we have to add "x.bandwidht" followed by the size of the space, in the attribute regarding the width
+
+```java
+    newRects.append('rect')
+      .attr('x', function(d, i) {
+        return x(d.product);
+      })
+      .attr('y', function(d, i) {
+        return y(d.sales);
+      })     
+      .attr('height', function(d, i) {
+        return height - y(d.sales);
+      })
+      .attr('width', x.bandwidth) 
+      .attr('width', function(d, i) {
+        return x.bandwidth() -15;
+      })
+      .attr('fill', function(d, i) {
+        return d.color;
+      });
+```
 
 ![picture](https://github.com/AlbertoHuertasC/Mandatory-Exercise/blob/master/pictures/Final.PNG?raw=true)
 
-![picture]()
+
 
 ![picture]()
 
