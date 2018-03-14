@@ -19,16 +19,7 @@ The next barchart is the starting point to perform the exercise:
 ![picture]()
 
 
-`function appendLegend()
-{
-    var legend = svg.selectAll('.legend')
-        .data(totalSales)
-        .enter()
-        .append('g')
-        .attr('class', 'legend')
-        .attr('transform', function(d, i) { 
-          return "translate(20," + i * 25 + ")"; 
-        });`
+`<?php echo "Hola Mundo"; ?>`
 
 
 
