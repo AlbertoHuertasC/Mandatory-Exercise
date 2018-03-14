@@ -13,6 +13,8 @@ The aim of this task is to create a new barchar from an initial barchar. The fin
 
 mainksks
 
+![picture](https://github.com/ivanlaloux/bigdata-module7-task1/blob/master/pictures/Baseline.PNG?raw=true)
+
 
 
 
