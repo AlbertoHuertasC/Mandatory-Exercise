@@ -18,7 +18,7 @@ The next barchart is the starting point to perform the exercise:
 
 ![picture]()
 
-<?php
+/**
 function appendLegend()
 {
     var legend = svg.selectAll('.legend')
@@ -29,8 +29,9 @@ function appendLegend()
         .attr('transform', function(d, i) { 
           return "translate(20," + i * 25 + ")"; 
         });
+*/
 
-?>
+
 
 
 
