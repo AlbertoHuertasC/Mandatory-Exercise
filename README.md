@@ -12,7 +12,7 @@ The next barchart is the starting point to perform the exercise:
 
 ![picture](https://github.com/Lemoncode/d3js-samples/blob/master/pictures/02_Chart_Original.png?raw=true)
 
-1. Showing the chart vertically
+**1. Showing the chart vertically**
 
 We have to switch X and Y axes and we can see the result in the next code:
 
@@ -52,7 +52,7 @@ function appendYAxis() {
 }
 ```
 
-2. Adding colors to each bar
+**2. Adding colors to each bar**
 
 To do this, we have to add the color we want for each product in data.js, creating a new attribute in this way.
 ``` java
@@ -64,7 +64,7 @@ To do this, we have to add the color we want for each product in data.js, creati
 ![picture](https://github.com/AlbertoHuertasC/Mandatory-Exercise/blob/master/pictures/1.PNG?raw=true)
 
 
-3. Adding space between columns
+**3. Adding space between columns**
 
 To add space between columns, we have to add "x.bandwidht" followed by the size of the space, in the attribute regarding the width
 
@@ -93,7 +93,7 @@ To add space between columns, we have to add "x.bandwidht" followed by the size 
 
 
 
-4. Adding a legend
+**4. Adding a legend**
 
 To do the last part, we have to create a new function called "legend".
 
@@ -137,7 +137,7 @@ function appendLegend()
 }
 ```
 
-*Solution
+**Solution**
 
 ![picture](https://github.com/AlbertoHuertasC/Mandatory-Exercise/blob/master/pictures/Final.PNG?raw=true)
 
