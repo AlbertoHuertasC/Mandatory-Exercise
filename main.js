@@ -108,9 +108,9 @@ function appendChartBars()
       .attr('height', function(d, i) {
         return height - y(d.sales);
       })
-      .attr('width', x.bandwidth)  
+      .attr('width', x.bandwidth) 
       .attr('width', function(d, i) {
-        return x.bandwidth() -10;
+        return x.bandwidth() -15;
       })
       .attr('fill', function(d, i) {
         return d.color;
