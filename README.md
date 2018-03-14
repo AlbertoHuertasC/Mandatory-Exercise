@@ -9,11 +9,9 @@ The aim of this task is to create a new barchar from an initial barchar. The fin
 - Showing the chart vertically
 
 
-![picture](C:\Users\usuario\Documents\Mandatory-Exercise\pictures\Final)
+![picture](https://github.com/AlbertoHuertasC/Mandatory-Exercise/blob/master/pictures/Final.PNG?raw=true)
 
-mainksks
 
-![picture](https://github.com/ivanlaloux/bigdata-module7-task1/blob/master/pictures/Baseline.PNG?raw=true)
 
 
 
