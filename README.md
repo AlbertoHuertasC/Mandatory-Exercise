@@ -16,18 +16,19 @@ The next barchart is the starting point to perform the exercise:
 
 We have to switch X and Y axes and we can see the result in the next code:
 
-`function setupXScale()`
-`{`
-  `x = d3.scaleBand()`
-    `.rangeRound([0, width])`
-    `.domain(totalSales.map(function(d, i) {`
-      `return d.product;`
-    `}));`
+function setupXScale()
+{
+  x = d3.scaleBand()
+    .rangeRound([0, width])
+    .domain(totalSales.map(function(d, i) {
+      return d.product;
+    }));
 }
 
 
 
 
+``` java
 function setupYScale()
 {
   var maxSales = d3.max(totalSales, function(d, i) {
@@ -39,7 +40,7 @@ function setupYScale()
     .domain([0, maxSales]);
 
 }
-
+```
 
 function appendXAxis() {
   svg.append("g")
