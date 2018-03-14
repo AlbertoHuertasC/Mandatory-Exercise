@@ -11,6 +11,8 @@ The aim of this task is to create a new barchar from an initial barchar. The fin
 
 ![picture](C:\Users\usuario\Documents\Mandatory-Exercise\pictures\Final)
 
+mainksks
+
 
 
 
