@@ -18,7 +18,7 @@ setupYScale();
 appendXAxis();
 appendYAxis();
 appendChartBars();
-
+appendLegend();
 
 
 function setupCanvasSize() {
@@ -98,4 +98,27 @@ function appendChartBars()
       })    
       ;
 
+}
+function appendLegend()
+{
+    var legend = svg.selectAll('.legend')
+        .data(totalSales)
+        .enter()
+        .append('g')
+        .attr('class', 'legend')
+        .attr('transform', function(d, i) { 
+          return "translate(20," + i * 25 + ")"; 
+        });
+    legend.append('rect')
+        .attr('x', width - 19)
+        .attr('width', 19)
+        .attr('height', 19)
+        .style('fill', function(d, i) { return d.color;})
+        .style('stroke', function(d, i) { return d.color;});
+
+    legend.append('text')
+        .attr('x', width)
+        .attr('y', 9.5)
+        .attr("dy", "0.32em")
+        .text(function(d) { return d.product; });
 }

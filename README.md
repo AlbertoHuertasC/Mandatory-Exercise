@@ -88,14 +88,63 @@ To add space between columns, we have to add "x.bandwidht" followed by the size 
       });
 ```
 
+
+![picture](https://github.com/AlbertoHuertasC/Mandatory-Exercise/blob/master/pictures/3.PNG?raw=true)
+
+
+
+4. Adding a legend
+
+To do the last part, we have to create a new function called "legend".
+
+```java
+setupCanvasSize();
+appendSvg("body");
+setupXScale();
+setupYScale();
+appendXAxis();
+appendYAxis();
+appendChartBars();
+appendLegend(); 
+```
+
+
+In addition, we have to add the style "d.color", so that the colors that we previously included in data.js take effect
+
+```java
+function appendLegend()
+{
+    var legend = svg.selectAll('.legend')
+        .data(totalSales)
+        .enter()
+        .append('g')
+        .attr('class', 'legend')
+        .attr('transform', function(d, i) { 
+          return "translate(20," + i * 25 + ")"; 
+        });
+    legend.append('rect')
+        .attr('x', width - 19)
+        .attr('width', 19)
+        .attr('height', 19)
+        .style('fill', function(d, i) { return d.color;})
+        .style('stroke', function(d, i) { return d.color;});
+
+    legend.append('text')
+        .attr('x', width)
+        .attr('y', 9.5)
+        .attr("dy", "0.32em")
+        .text(function(d) { return d.product; });
+}
+```
+
+*Solution
+
 ![picture](https://github.com/AlbertoHuertasC/Mandatory-Exercise/blob/master/pictures/Final.PNG?raw=true)
 
 
 
-![picture]()
 
 
-`<?php "Hola Mundoa"; ?>`
 
 
 
