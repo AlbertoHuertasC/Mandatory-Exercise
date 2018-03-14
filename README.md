@@ -29,7 +29,7 @@ We have to switch X and Y axes and we can see the result in the next code:
 ![picture]()
 
 
-`<?php function setupXScale()
+`<?php "function setupXScale()
 {
   x = d3.scaleBand()
     .rangeRound([0, width])
@@ -54,17 +54,15 @@ function setupYScale()
 
 
 function appendXAxis() {
-  // Add the X Axis
   svg.append("g")
     .attr("transform",`translate(0, ${height})`)
     .call(d3.axisBottom(x));
 }
 
 function appendYAxis() {
-  // Add the Y Axis
   svg.append("g")
   .call(d3.axisLeft(y));
-}; ?>`
+}"; ?>`
 
 
 
