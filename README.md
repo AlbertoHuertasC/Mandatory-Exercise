@@ -9,7 +9,7 @@ The aim of this task is to create a new barchar from an initial barchar. The fin
 - Showing the chart vertically
 
 
-![picture](Final.png)
+![picture](Final)
 
 
 
