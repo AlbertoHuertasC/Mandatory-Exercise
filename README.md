@@ -16,9 +16,39 @@ The next barchart is the starting point to perform the exercise:
 
 We have to switch X and Y axes and we can see the result in the next code:
 
-`<?php 
+`<?php function setupXScale()?>`
+`<?php {?>`
+  `<?php x = d3.scaleBand()?>`
+    `<?php .rangeRound([0, width])?>`
+    `<?php .domain(totalSales.map(function(d, i) {?>`
+      `<?php return d.product;?>`
+    `<?php }));?>`
+`<?php }?>`
 
-; ?>`
+
+`<?php function setupYScale()?>`
+`<?php {?>`
+  `<?php var maxSales = d3.max(totalSales, function(d, i) {?>`
+    `<?php return d.sales;?>`
+  `<?php });?>`
+
+  `<?php y = d3.scaleLinear()?>`
+    `<?php .range([height, 0])?>`
+    `<?php .domain([0, maxSales]);?>`
+
+`<?php }?>`
+
+
+`<?php function appendXAxis() {?>`
+  `<?php svg.append("g")?>`
+    `<?php .attr("transform",`translate(0, ${height})`)?>`
+    `<?php .call(d3.axisBottom(x));?>`
+`<?php }?>`
+
+`<?php function appendYAxis() {?>`
+  `<?php svg.append("g")?>`
+  `<?php .call(d3.axisLeft(y));?>`
+`<?php }?>`
 
 
 
@@ -29,40 +59,8 @@ We have to switch X and Y axes and we can see the result in the next code:
 ![picture]()
 
 
-`<?php "function setupXScale()
-{
-  x = d3.scaleBand()
-    .rangeRound([0, width])
-    .domain(totalSales.map(function(d, i) {
-      return d.product;
-    }));
-}
+`<?php "Hola Mundoa"; ?>`
 
-
-
-function setupYScale()
-{
-  var maxSales = d3.max(totalSales, function(d, i) {
-    return d.sales;
-  });
-
-  y = d3.scaleLinear()
-    .range([height, 0])
-    .domain([0, maxSales]);
-
-}
-
-
-function appendXAxis() {
-  svg.append("g")
-    .attr("transform",`translate(0, ${height})`)
-    .call(d3.axisBottom(x));
-}
-
-function appendYAxis() {
-  svg.append("g")
-  .call(d3.axisLeft(y));
-}"; ?>`
 
 
 
